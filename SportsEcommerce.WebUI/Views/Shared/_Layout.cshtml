@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Sports Ecommerce</title>
 
 </head>
 <body>
@@ -14,7 +14,7 @@
     </div>
     <div class="row panel">
         <div id="categories" class="col-xs-3">
-            Put something here later
+            @Html.Action("Menu", "Nav")
         </div>
         <div class="col-xs-8">
             @RenderBody()

@@ -20,11 +20,12 @@ namespace SportsEcommerce.WebUI.Controllers
         }
 
         // GET: Products
-        public ViewResult List(int page = 1)
+        public ViewResult List(string category, int page = 1)
         {
             ProductListViewModel model = new ProductListViewModel
             {
                 Products = productRepo.Products
+                .Where(p => category == null || p.Category == category)
                 .OrderBy(p => p.ProductID)
                 .Skip((page - 1) * PageSize)
                 .Take(PageSize),
@@ -33,8 +34,12 @@ namespace SportsEcommerce.WebUI.Controllers
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalItems = productRepo.Products.Count()
-                }
+                    TotalItems = category == null 
+                                ? productRepo.Products.Count() 
+                                :productRepo.Products.Where(c => c.Category == category).Count(),
+                    
+                },
+                 CurrentCategory = category
             };
 
 
