@@ -1,0 +1,16 @@
+﻿@using SportsEcommerce.WebUI.Models
+@using SportsEcommerce.Domain.Entities
+@model ProductListViewModel
+@{
+    ViewBag.Title = "Products";
+}
+
+@foreach (Product p in Model.Products)
+{
+ @Html.Partial("ProductsSummary", p)
+}
+
+<div class="btn-group pull-right">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x}))
+</div>
+
