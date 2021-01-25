@@ -12,7 +12,7 @@ namespace SportsEcommerce.WebUI.Controllers
     {
         private IProductRepository productRepo;
 
-        public int PageSize = 2;
+        public int PageSize  { get; set; } = 2;
 
         public ProductController(IProductRepository productRepo)
         {
