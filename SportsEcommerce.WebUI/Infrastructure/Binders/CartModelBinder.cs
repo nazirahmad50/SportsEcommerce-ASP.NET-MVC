@@ -7,6 +7,9 @@ using System.Web.Mvc;
 
 namespace SportsEcommerce.WebUI.Infrastructure.Binders
 {
+    /// <summary>
+    /// Create a custom model binder for initializing  Cart object
+    /// </summary>
     public class CartModelBinder : IModelBinder
     {
         private const string sessionKey = "Cart";
