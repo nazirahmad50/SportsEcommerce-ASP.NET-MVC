@@ -21,6 +21,7 @@ namespace SportsEcommerce.WebUI
 
             // need to tell the MVC framework that i can use the CartModelBinder class to create an instance of Cart
             ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
+
         }
     }
 }

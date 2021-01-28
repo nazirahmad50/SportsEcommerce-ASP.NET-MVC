@@ -1,0 +1,15 @@
+X-Sender: sportsEcommerce@example.com
+X-Receiver: orders@example.com
+MIME-Version: 1.0
+From: sportsEcommerce@example.com
+To: orders@example.com
+Date: 28 Jan 2021 17:54:42 +0000
+Subject: New order submited
+Content-Type: text/plain; charset=us-ascii
+Content-Transfer-Encoding: quoted-printable
+
+A new order has been submited=0D=0A---=0D=0AItems=0D=0A1 x Kayak =
+(subtotal: ?275.00)Total order value: ?275.00---=0D=0AShip to:=0D=0A=
+Nazir Ahmad=0D=0A100 alexander road=0D=0A=0D=0A=0D=0ABirmingham=0D=0A=
+West Midlands=0D=0AUnited Kingdom=0D=0AB276hb=0D=0A---=0D=0AGift =
+Wrap: Yes
