@@ -38,7 +38,7 @@ namespace SportsEcommerce.UnitTests
                 new Product{ProductID = 1, Name = "P1", Category = "C1"}
             }.AsQueryable());
 
-            controller = new CartController(mock.Object);
+            controller = new CartController(mock.Object, null);
         }
 
 

@@ -1,0 +1,47 @@
+﻿@model SportsEcommerce.Domain.Entities.Product
+
+@{
+    ViewBag.Title = "Admin: Edit" + Model.Name;
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+
+}
+
+<div class="panel">
+    <div class="panel-heading">
+        <h1>Edit @Model.Name</h1>
+    </div>
+</div>
+
+@using (Html.BeginForm("Edit", "Admin"))
+{
+    <div class="panel-body">
+        @Html.HiddenFor(x => x.ProductID)
+
+        @foreach (var property in ViewData.ModelMetadata.Properties)
+        {
+            if (property.PropertyName != "ProductID")
+            {
+                <div class="form-group">
+                    <label>@(property.DisplayName ?? property.PropertyName)</label>
+                    @if (property.PropertyName == "Description")
+                    {
+                        @Html.TextArea(property.PropertyName, null, new { @class = "form-control", rows = 5 })
+                    }
+                    else
+                    {
+                        @Html.TextBox(property.PropertyName, null, new { @class = "form-control" })
+                    }
+
+                    @Html.ValidationMessage(property.PropertyName)
+                </div>
+            }
+        }
+    </div>
+
+
+    <div class="panel-footer">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        @Html.ActionLink("Cnacel and return to list", "Index", null, new { @class = "btn btn-default" })
+    </div>
+
+}
