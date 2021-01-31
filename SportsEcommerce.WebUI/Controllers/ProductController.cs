@@ -1,4 +1,5 @@
 ﻿using SportsEcommerce.Domain.Abstract;
+using SportsEcommerce.Domain.Entities;
 using SportsEcommerce.WebUI.Models;
 using System;
 using System.Collections.Generic;
@@ -44,6 +45,16 @@ namespace SportsEcommerce.WebUI.Controllers
 
 
             return View(model);
+        }
+
+        public FileContentResult GetImage(int productId)
+        {
+            Product prod = productRepo.Products.FirstOrDefault(p => p.ProductID == productId);
+
+            if (prod != null)
+                return File(prod.ImageData, prod.ImageMimeType);
+            else
+                return null;
         }
     }
 }

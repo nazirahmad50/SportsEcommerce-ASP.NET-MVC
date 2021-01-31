@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace SportsEcommerce.WebUI.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
     {
         private IProductRepository prodtRepo;
@@ -29,11 +30,24 @@ namespace SportsEcommerce.WebUI.Controllers
             return View(product);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="product"></param>
+        /// <param name="image">Pass the uploaded file data</param>
+        /// <returns></returns>
         [HttpPost]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(Product product, HttpPostedFileBase image = null)
         {
            if (ModelState.IsValid)
             {
+                if (image != null)
+                {
+                    product.ImageMimeType = image.ContentType;
+                    product.ImageData = new byte[image.ContentLength];
+                    image.InputStream.Read(product.ImageData, 0, image.ContentLength);
+                }
+
                 prodtRepo.SaveProduct(product);
                 // TempData is deleted at the end of http request
                 TempData["message"] = string.Format("{0} has been saved", product.Name);
