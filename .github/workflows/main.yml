@@ -23,3 +23,6 @@ jobs:
       
     - name: build solution
       run: msbuild SportsEcommerce.sln
+      
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
