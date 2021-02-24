@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/sportsecommerce-web-db/databases/SportsEcommerce.WebUI_db",
+      "type": "mssql.azure",
+      "connectionId": "sportsecommerce-web-db.database.windows.net",
+      "secretStore": null
+    }
+  }
+}

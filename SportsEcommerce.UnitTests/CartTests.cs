@@ -137,7 +137,7 @@ namespace SportsEcommerce.UnitTests
         [Test]
         public void Can_View_Cart_Contents()
         {
-            CartController cartController = new CartController(null);
+            CartController cartController = new CartController(null, null);
 
             CartIndexViewModel result = (CartIndexViewModel)cartController.Index(cart, "myUrl").Model;
 
