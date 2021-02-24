@@ -25,4 +25,4 @@ jobs:
       run: msbuild SportsEcommerce.sln
       
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test ~/SportsEcommerce.UnitTests/SportsEcommerce.UnitTests.csproj
