@@ -25,4 +25,4 @@ jobs:
       run: msbuild SportsEcommerce.sln
       
     - name: Test
-      run: dotnet test ~/SportsEcommerce.UnitTests/SportsEcommerce.UnitTests.csproj
+      run: vstest.console SportsEcommerce.UnitTests\bin\Debug\SportsEcommerce.UnitTests.dll
