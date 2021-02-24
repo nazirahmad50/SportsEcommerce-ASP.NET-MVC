@@ -25,4 +25,4 @@ jobs:
       run: msbuild SportsEcommerce.sln
       
     - name: Test
-      run: vstest.console SportsEcommerce.UnitTests\bin\Debug\SportsEcommerce.UnitTests.dll
+      run: nunit3-console.exe SportsEcommerce.UnitTests\bin\Debug\SportsEcommerce.UnitTests.dll
